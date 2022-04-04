@@ -7,7 +7,7 @@ Each microservice have their separate own database.
 An API Gateway is used for the communication between these microservices, which passes the request from one microservice to another acting as a proxy.
 App is dockerised using docker-compose.
 
-![Backend APIs Communication Diagram](https://user-images.githubusercontent.com/62262069/161607842-60821dec-2134-482b-be2d-425840af4479.jpg)
+![Backend APIs Communication Diagram](https://user-images.githubusercontent.com/62262069/161607842-60821dec-2134-482b-be2d-425840af4479.jpg | width=100)
 
 
 ## Tech Stack Used
