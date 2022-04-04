@@ -3,7 +3,9 @@
 This application contains microservices: 
 1. Content Service
 2. Users & Dailly-Pass Services
+
 Each microservice have their separate own database.
+
 An API Gateway is used for the communication between these microservices, which passes the request from one microservice to another acting as a proxy.
 App is dockerised using docker-compose.
 
