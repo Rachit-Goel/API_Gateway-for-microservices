@@ -1,0 +1,238 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pratilipi_Microservices",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost://"
+    }
+  ],
+  "tags": [
+    {
+      "name": "content"
+    },
+    {
+      "name": "users & daily-pass"
+    }
+  ],
+  "paths": {
+    "/000/content/upload": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "summary": "content/upload",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "content": [
+                    {
+                      "title": "Harry Potter",
+                      "Totalchapters": 10,
+                      "chapters": [
+                        {
+                          "chNo": 1,
+                          "chName": "episode1",
+                          "content": "aaaaaaaaaaaaaa"
+                        },
+                        {
+                          "chNo": 2,
+                          "chName": "episode2",
+                          "content": "bbbbbbbbbbbb"
+                        },
+                        {
+                          "chNo": 3,
+                          "chName": "episode3",
+                          "content": "cccccccccccc"
+                        },
+                        {
+                          "chNo": 4,
+                          "chName": "episode4",
+                          "content": "dddddddddddd"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "spider-man",
+                      "Totalchapters": 10,
+                      "chapters": [
+                        {
+                          "chNo": 1,
+                          "chName": "episode1",
+                          "content": "aaaaaaaaaaaaaa"
+                        },
+                        {
+                          "chNo": 2,
+                          "chName": "episode2",
+                          "content": "bbbbbbbbbbbb"
+                        },
+                        {
+                          "chNo": 3,
+                          "chName": "episode3",
+                          "content": "cccccccccccc"
+                        },
+                        {
+                          "chNo": 4,
+                          "chName": "episode4",
+                          "content": "dddddddddddd"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/content/fetchall": {
+      "get": {
+        "tags": [
+          "content"
+        ],
+        "summary": "content/fetchall",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/content/usercontent": {
+      "post": {
+        "tags": [
+          "content"
+        ],
+        "summary": "content/usercontent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "userId": "624a07980ab6a78f15f99922"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/users/signup": {
+      "post": {
+        "tags": [
+          "users & daily-pass"
+        ],
+        "summary": "users/signup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "developer",
+                  "email": "developer99@gmail.com",
+                  "password": "123developer"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/users/fetchall": {
+      "get": {
+        "tags": [
+          "users & daily-pass"
+        ],
+        "summary": "users/fetchall",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/users/daily-pass/unlockone": {
+      "post": {
+        "tags": [
+          "users & daily-pass"
+        ],
+        "summary": "users/daily-pass/unlockone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "userId": "624a07980ab6a78f15f99922",
+                  "contentId": "6249f7a4ca5c3135e653ae45"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/000/users/daily-pass/fetch/624a07980ab6a78f15f99922": {
+      "get": {
+        "tags": [
+          "users & daily-pass"
+        ],
+        "summary": "users/daily-pass/fetch/:id",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

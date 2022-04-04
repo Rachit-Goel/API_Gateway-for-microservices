@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+  apigateway:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    container_name: apigateway
+    restart: always
+    volumes:
+      - ".:/app"
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - users_dailypass
+      - content
+    environment:
+      - BASE_URLu=users_dailypass
+      - BASE_URLc=content
+    
+  users_dailypass:
+    build: 
+      dockerfile: Dockerfile
+      context: ./users_dailypass
+    container_name: users_dailypass
+    restart: always
+    volumes:
+      - ".:/app"
+      - /app/users_dailypass/node_modules
+    ports:
+      - "5001:5001"
+    environment:
+      - BASE_URL=content
+
+  content:
+    build:
+      dockerfile: Dockerfile
+      context: ./content
+    container_name: content
+    restart: always
+    volumes:
+      - ".:/app"
+      - /app/content/node_modules
+    ports:
+      - "5002:5002"
+    environment:
+      - BASE_URL=users_dailypass
+
