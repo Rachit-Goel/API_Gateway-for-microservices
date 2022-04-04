@@ -30,7 +30,7 @@ services:
     ports:
       - "5001:5001"
     environment:
-      - BASE_URL=content
+      - BASE_URL=apigateway
 
   content:
     build:
@@ -44,5 +44,5 @@ services:
     ports:
       - "5002:5002"
     environment:
-      - BASE_URL=users_dailypass
+      - BASE_URL=apigateway
 

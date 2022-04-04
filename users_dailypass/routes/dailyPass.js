@@ -36,7 +36,7 @@ router.post("/unlockone", async (req,res)=>{
         console.log("daily-pass-unlockOne success");
     } 
     catch (err) {
-        res.status(500).json(error);
+        res.status(500).json(err);
         console.log("Error in daily-pass-unlockOne");
     }
 });

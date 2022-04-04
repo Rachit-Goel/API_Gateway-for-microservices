@@ -2,11 +2,12 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Pratilipi_Microservices",
+    "description": "This application contains microservices:\n  1. Content Service,\n  2. Users & Dailly-Pass Services\n\nEach microservice have their separate own database.\n\nAn API Gateway is used for the communication between these microservices, which passes the request from one microservice to another acting as a proxy. App is dockerised using docker-compose.",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "localhost://"
+      "url": "http://localhost:3000"
     }
   ],
   "tags": [
@@ -18,76 +19,78 @@
     }
   ],
   "paths": {
-    "/000/content/upload": {
+    "/content/upload": {
       "post": {
         "tags": [
           "content"
         ],
         "summary": "content/upload",
+        "description": "API for bulk uploading of Array of content in required format of Content Schema shown in example value.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "example": {
-                  "content": [
-                    {
-                      "title": "Harry Potter",
-                      "Totalchapters": 10,
-                      "chapters": [
-                        {
-                          "chNo": 1,
-                          "chName": "episode1",
-                          "content": "aaaaaaaaaaaaaa"
-                        },
-                        {
-                          "chNo": 2,
-                          "chName": "episode2",
-                          "content": "bbbbbbbbbbbb"
-                        },
-                        {
-                          "chNo": 3,
-                          "chName": "episode3",
-                          "content": "cccccccccccc"
-                        },
-                        {
-                          "chNo": 4,
-                          "chName": "episode4",
-                          "content": "dddddddddddd"
-                        }
-                      ]
-                    },
-                    {
-                      "title": "spider-man",
-                      "Totalchapters": 10,
-                      "chapters": [
-                        {
-                          "chNo": 1,
-                          "chName": "episode1",
-                          "content": "aaaaaaaaaaaaaa"
-                        },
-                        {
-                          "chNo": 2,
-                          "chName": "episode2",
-                          "content": "bbbbbbbbbbbb"
-                        },
-                        {
-                          "chNo": 3,
-                          "chName": "episode3",
-                          "content": "cccccccccccc"
-                        },
-                        {
-                          "chNo": 4,
-                          "chName": "episode4",
-                          "content": "dddddddddddd"
-                        }
-                      ]
-                    }
-                  ]
-                }
+                "$ref": "#/components/schemas/Content"
+              },
+              "example": {
+                "content": [
+                  {
+                    "title": "Harry Potter",
+                    "Totalchapters": 10,
+                    "chapters": [
+                      {
+                        "chNo": 1,
+                        "chName": "episode1",
+                        "content": "aaaaaaaaaaaaaa"
+                      },
+                      {
+                        "chNo": 2,
+                        "chName": "episode2",
+                        "content": "bbbbbbbbbbbb"
+                      },
+                      {
+                        "chNo": 3,
+                        "chName": "episode3",
+                        "content": "cccccccccccc"
+                      },
+                      {
+                        "chNo": 4,
+                        "chName": "episode4",
+                        "content": "dddddddddddd"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "spider-man",
+                    "Totalchapters": 10,
+                    "chapters": [
+                      {
+                        "chNo": 1,
+                        "chName": "episode1",
+                        "content": "aaaaaaaaaaaaaa"
+                      },
+                      {
+                        "chNo": 2,
+                        "chName": "episode2",
+                        "content": "bbbbbbbbbbbb"
+                      },
+                      {
+                        "chNo": 3,
+                        "chName": "episode3",
+                        "content": "cccccccccccc"
+                      },
+                      {
+                        "chNo": 4,
+                        "chName": "episode4",
+                        "content": "dddddddddddd"
+                      }
+                    ]
+                  }
+                ]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -99,12 +102,13 @@
         }
       }
     },
-    "/000/content/fetchall": {
+    "/content/fetchall": {
       "get": {
         "tags": [
           "content"
         ],
         "summary": "content/fetchall",
+        "description": "API to Fetch all content.",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -115,12 +119,13 @@
         }
       }
     },
-    "/000/content/usercontent": {
+    "/content/usercontent": {
       "post": {
         "tags": [
           "content"
         ],
         "summary": "content/usercontent",
+        "description": "API to Fetch content for a user, like unlocked chapters per series & count of total episodes.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -131,7 +136,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -143,58 +149,73 @@
         }
       }
     },
-    "/000/users/signup": {
+    "/users/signup": {
       "post": {
         "tags": [
           "users & daily-pass"
         ],
         "summary": "users/signup",
+        "description": "API for Registering new User",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "example": {
-                  "name": "developer",
-                  "email": "developer99@gmail.com",
-                  "password": "123developer"
-                }
+                "$ref": "#/components/schemas/User",
+                "type": "object"
+              },
+              "example": {
+                "name": "developer",
+                "email": "developer99@gmail.com",
+                "password": "123developer"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User",
+                  "type": "object"
+                }
+              }
             }
           }
         }
       }
     },
-    "/000/users/fetchall": {
+    "/users/fetchall": {
       "get": {
         "tags": [
           "users & daily-pass"
         ],
         "summary": "users/fetchall",
+        "description": "API to Fetch all users.",
         "responses": {
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User",
+                  "type": "object"
+                }
+              }
             }
           }
         }
       }
     },
-    "/000/users/daily-pass/unlockone": {
+    "/users/daily-pass/unlockone": {
       "post": {
         "tags": [
           "users & daily-pass"
         ],
         "summary": "users/daily-pass/unlockone",
+        "description": "API to unlock one chapters for the given user and series",
         "requestBody": {
           "content": {
             "application/json": {
@@ -206,7 +227,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -218,12 +240,27 @@
         }
       }
     },
-    "/000/users/daily-pass/fetch/624a07980ab6a78f15f99922": {
+    "/users/daily-pass/fetch/{id}": {
       "get": {
         "tags": [
           "users & daily-pass"
         ],
         "summary": "users/daily-pass/fetch/:id",
+        "description": "API to fetch user data of unlocked chapters for each series. This is called via API Gateway, when \"content/usercontent\" API is called.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minimum": 1,
+              "example": "624a07980ab6a78f15f99922"
+            },
+            "description": "User ID",
+            "style": "simple"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -231,6 +268,72 @@
               "application/json": {}
             }
           }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "c_Id": {
+                  "type": "string"
+                },
+                "unlockedCh": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "Content": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "totalchapters": {
+            "type": "string"
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "chNo": {
+                  "type": "number"
+                },
+                "chName": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "Content"
         }
       }
     }

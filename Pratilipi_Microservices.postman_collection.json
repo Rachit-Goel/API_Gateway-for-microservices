@@ -53,7 +53,57 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "content/fetchall",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/content/fetchall",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"content",
+										"fetchall"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "1067"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"42b-xs44IZlGLI46c31SlUbOARgQe2c\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:50:08 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6249f7a4ca5c3135e653ae45\",\n        \"title\": \"Harry Potter\",\n        \"Totalchapters\": 10,\n        \"chapters\": [\n            {\n                \"chNo\": 1,\n                \"chName\": \"episode1\",\n                \"content\": \"aaaaaaaaaaaaaa\",\n                \"_id\": \"6249f7a4ca5c3135e653ae46\"\n            },\n            {\n                \"chNo\": 2,\n                \"chName\": \"episode2\",\n                \"content\": \"bbbbbbbbbbbb\",\n                \"_id\": \"6249f7a4ca5c3135e653ae47\"\n            },\n            {\n                \"chNo\": 3,\n                \"chName\": \"episode3\",\n                \"content\": \"cccccccccccc\",\n                \"_id\": \"6249f7a4ca5c3135e653ae48\"\n            },\n            {\n                \"chNo\": 4,\n                \"chName\": \"episode4\",\n                \"content\": \"dddddddddddd\",\n                \"_id\": \"6249f7a4ca5c3135e653ae49\"\n            }\n        ],\n        \"createdAt\": \"2022-04-03T19:38:12.873Z\",\n        \"updatedAt\": \"2022-04-03T19:38:12.873Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6249f7a4ca5c3135e653ae4b\",\n        \"title\": \"spider-man\",\n        \"Totalchapters\": 10,\n        \"chapters\": [\n            {\n                \"chNo\": 1,\n                \"chName\": \"episode1\",\n                \"content\": \"aaaaaaaaaaaaaa\",\n                \"_id\": \"6249f7a4ca5c3135e653ae4c\"\n            },\n            {\n                \"chNo\": 2,\n                \"chName\": \"episode2\",\n                \"content\": \"bbbbbbbbbbbb\",\n                \"_id\": \"6249f7a4ca5c3135e653ae4d\"\n            },\n            {\n                \"chNo\": 3,\n                \"chName\": \"episode3\",\n                \"content\": \"cccccccccccc\",\n                \"_id\": \"6249f7a4ca5c3135e653ae4e\"\n            },\n            {\n                \"chNo\": 4,\n                \"chName\": \"episode4\",\n                \"content\": \"dddddddddddd\",\n                \"_id\": \"6249f7a4ca5c3135e653ae4f\"\n            }\n        ],\n        \"createdAt\": \"2022-04-03T19:38:12.935Z\",\n        \"updatedAt\": \"2022-04-03T19:38:12.935Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "content/usercontent",
@@ -81,7 +131,66 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "content/usercontent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"624a07980ab6a78f15f99922\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/content/usercontent",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"content",
+										"usercontent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "207"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"cf-HwSDQB3kHzJL/onbv5Cc53jI/64\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:10:42 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n        \"unlockedCh\": 6,\n        \"_id\": \"624a07980ab6a78f15f99923\",\n        \"Totalchapters\": 10\n    },\n    {\n        \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n        \"unlockedCh\": 4,\n        \"_id\": \"624a07980ab6a78f15f99924\",\n        \"Totalchapters\": 10\n    }\n]"
+						}
+					]
 				}
 			]
 		},
@@ -114,7 +223,66 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "users/signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"abc\",\r\n    \"email\": \"abc99@gmail.com\",\r\n    \"password\": \"123abc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "397"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"18d-5zBOkbWf6OvTaNygFaoS3Pd43c0\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:12:06 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"abc\",\n    \"email\": \"abc99@gmail.com\",\n    \"password\": \"U2FsdGVkX19/XQ2lUTY5igmM4d8CoJSUgyFoS/ClSic=\",\n    \"content\": [\n        {\n            \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n            \"unlockedCh\": 4,\n            \"_id\": \"624b511645a1bdc2be92af24\"\n        },\n        {\n            \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n            \"unlockedCh\": 4,\n            \"_id\": \"624b511645a1bdc2be92af25\"\n        }\n    ],\n    \"_id\": \"624b511645a1bdc2be92af23\",\n    \"createdAt\": \"2022-04-04T20:12:06.192Z\",\n    \"updatedAt\": \"2022-04-04T20:12:06.192Z\",\n    \"__v\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "users/fetchall",
@@ -133,7 +301,57 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "users/fetchall",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/users/fetchall",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"fetchall"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "1217"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c1-CsnUaVVQrho6z4i0cKEBL7F2Abk\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:48:00 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"624a07980ab6a78f15f99922\",\n        \"name\": \"rachit\",\n        \"email\": \"rachitgoel99@gmail.com\",\n        \"password\": \"U2FsdGVkX18bOIfSDRFzHo0U2/36tZ2RC0UYll1i43o=\",\n        \"content\": [\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n                \"unlockedCh\": 6,\n                \"_id\": \"624a07980ab6a78f15f99923\"\n            },\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n                \"unlockedCh\": 4,\n                \"_id\": \"624a07980ab6a78f15f99924\"\n            }\n        ],\n        \"createdAt\": \"2022-04-03T20:46:17.007Z\",\n        \"updatedAt\": \"2022-04-03T21:37:41.042Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"624a08ac47d9c66e96e4a6e7\",\n        \"name\": \"developer\",\n        \"email\": \"developer99@gmail.com\",\n        \"password\": \"U2FsdGVkX18dmac4zyljPXxa7w5CuvgseukFO3jkT84=\",\n        \"content\": [\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n                \"unlockedCh\": 4,\n                \"_id\": \"624a08ac47d9c66e96e4a6e8\"\n            },\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n                \"unlockedCh\": 4,\n                \"_id\": \"624a08ac47d9c66e96e4a6e9\"\n            }\n        ],\n        \"createdAt\": \"2022-04-03T20:50:52.861Z\",\n        \"updatedAt\": \"2022-04-03T20:50:52.861Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"624b511645a1bdc2be92af23\",\n        \"name\": \"abc\",\n        \"email\": \"abc99@gmail.com\",\n        \"password\": \"U2FsdGVkX19/XQ2lUTY5igmM4d8CoJSUgyFoS/ClSic=\",\n        \"content\": [\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n                \"unlockedCh\": 4,\n                \"_id\": \"624b511645a1bdc2be92af24\"\n            },\n            {\n                \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n                \"unlockedCh\": 4,\n                \"_id\": \"624b511645a1bdc2be92af25\"\n            }\n        ],\n        \"createdAt\": \"2022-04-04T20:12:06.192Z\",\n        \"updatedAt\": \"2022-04-04T20:12:06.192Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "users/daily-pass/unlockone",
@@ -162,7 +380,67 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "users/daily-pass/unlockone",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"624a07980ab6a78f15f99922\",\r\n    \"contentId\": \"6249f7a4ca5c3135e653ae45\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/daily-pass/unlockone",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"daily-pass",
+										"unlockone"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "28"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1c-UJWHynbhd9q92njPMSQU9S69QSQ\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:49:49 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "daily-pass-unlockOne success"
+						}
+					]
 				},
 				{
 					"name": "users/daily-pass/fetch/:id",
@@ -183,7 +461,59 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "users/daily-pass/fetch/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/users/daily-pass/fetch/624a07980ab6a78f15f99922",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"daily-pass",
+										"fetch",
+										"624a07980ab6a78f15f99922"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "169"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"a9-Lw30DRlVOPUW9yy2Q5eHCzmLXjU\""
+								},
+								{
+									"key": "date",
+									"value": "Mon, 04 Apr 2022 20:48:21 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"c_Id\": \"6249f7a4ca5c3135e653ae45\",\n        \"unlockedCh\": 6,\n        \"_id\": \"624a07980ab6a78f15f99923\"\n    },\n    {\n        \"c_Id\": \"6249f7a4ca5c3135e653ae4b\",\n        \"unlockedCh\": 4,\n        \"_id\": \"624a07980ab6a78f15f99924\"\n    }\n]"
+						}
+					]
 				}
 			]
 		}
