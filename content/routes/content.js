@@ -8,7 +8,11 @@ router.post("/upload", async (req, res) => {
     for(item of contentItems){
         const newcontent = new Content(item); 
         try {
-            await newcontent.save();
+            const savedcontent = await newcontent.save();
+            await axios.post(`http://${process.env.BASE_URL}:3000/users/daily-pass/saveunlockch`,{
+                "c_Id" : savedcontent._id
+            });
+
             count++;
             console.log("content-upload success");
         } 

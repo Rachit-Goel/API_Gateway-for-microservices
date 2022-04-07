@@ -48,8 +48,29 @@ router.get("/fetch/:id", async (req,res)=>{
         console.log("daily-pass-fetch success");
     } 
     catch (err) {
-        res.status(500).json(error);
+        res.status(500).json(err);
         console.log("Error in daily-pass-fetch");
+    }
+});
+
+router.post("/saveunlockch", async (req,res)=>{
+    try {
+        const contentId = req.body.c_Id;
+        await User.updateMany({}, 
+        {
+            "$push": {
+                "content": {
+                    "c_Id" : contentId,
+                    "unlockedCh" : 4
+                } 
+            }
+        });
+        res.send(`unlockedch saved for all users`);
+        console.log(`daily-pass-saveunlockch success, unlockedch saved for all users`);
+    } 
+    catch (err) {
+        res.status(500).json(err);
+        console.log("Error in daily-pass-saveunlockch");
     }
 });
 
