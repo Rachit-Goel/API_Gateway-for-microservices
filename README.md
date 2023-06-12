@@ -1,4 +1,4 @@
-# pratilipi-microservices
+# API Gateway for microservices
 
 This application contains microservices: 
 1. Content Service
